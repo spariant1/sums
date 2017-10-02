@@ -1,0 +1,62 @@
+//disable spinner on webkit browsers 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.in-correct{
+  background-color: #dd546f;
+}
+.oper{font-size: 600%;
+      width:100%;
+}
+.comment{font-size: 200%}
+.comment-small{font-size: 180%;}
+.ans{margin-left:auto;
+    margin-right:auto;
+    width: 150px; }
+.input-tens{
+  width:100px;
+  height:100px;
+  font-size: 80px;
+  text-align:right;
+  //background-color:  #EEE5DB;
+  border-style: none ;
+  border-radius: 4px 4px  4px  4px ;   
+}
+.input-ones{
+  width:50px;
+  height:100px;
+  font-size: 80px;
+  text-align:center;
+  //background-color:  #EEE5DB;
+  border-style: none ;
+  border-radius: 4px 4px  4px  4px ; 
+}
+.input-ones, .input-ones-invalid{
+  width:50px;
+  height:100px;
+  font-size: 80px;
+  text-align:center;
+  //background-color:  #EEE5DB;
+  border-color: red;
+  border-radius: 4px 4px  4px  4px ; 
+}
+.container {
+  margin-top: 50px;
+  //height: 500px; // auto height 
+  width: 350px;     
+  background-color:  #EEE5DB;//  white; //#7adbc8;
+  color:  black;// #8BB93A; //blue;  
+  box-shadow: 0px 0px 30px grey; 
+  //width: 100%;
+
+}
+.hr{background-color:black;}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+// @import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
+

@@ -1,0 +1,58 @@
+<div class="container text-center" ng-controller="minusController as minus">
+  
+    <div class="row text-center">
+      <span class="ng-cloak oper text-center"><span class="invisible">-</span>{{(minus.quesData.oper01/10)|limitTo:1}}{{minus.quesData.oper01%10}}</span>
+    </div>
+    <div class="row text-center">
+      <span class="ng-cloak oper text-center">-{{(minus.quesData.oper02/10)|limitTo:1}}{{minus.quesData.oper02%10}}</span>
+    </div>
+    <hr> </hr>
+    <!--  Totals row here-->
+   <form name="answer" class="form" ng-keypress="($event.keyCode === 13) && minus.checkAns()" novalidate>
+
+      <div class="form-inline form-group " ng-class="minus.vFeedBack">
+
+        <!--         onkeypress='return event.charCode >= 48 && event.charCode <= 57' 
+ng-keypress="minus.validateOnes($event)" -->
+        <input name="tens" ng-cloak ng-model="minus.tens" ng-click="minus.tens=undefined" ng-keyup="(minus.tens.toString().length<=2) || (minus.tens=undefined)" type="number" class=" input-tens" tabindex=2 required/>
+
+        <input name="ones" type="number" ng-class="minus.onesInvalid" ng-model="minus.ones" ng-keyup="(minus.ones.toString().length===1) || (minus.ones=undefined)" ng-cloak class="input-ones" tabindex="1" ng-click="minus.ones = undefined" autofocus required/>
+
+      </div>
+      <div class="row">
+        <input name="checkAns" type="button" ng-keypress="($event.keyCode === 13) && minus.checkAns()" ng-click="minus.checkAns()" class="row btn btn-lg btn-primary center-block form-group" value="CHECK" />
+      </div>
+
+    </form>
+
+    <div class="row">
+      <div ng-show="minus.correct" class=" row text-success form-group comment center-block" ng-cloak>
+        {{minus.feedback}}
+      </div>
+
+      <div ng-show="!minus.correct" class="row text-info form-group comment-small center-block" ng-cloak>
+        {{minus.feedback}}
+      </div>
+
+    </div>
+    <div class="panel panel-primary">
+      <!-- Default panel contents -->
+      <div class="panel-heading">
+        <h3 class="panel-title">Attempts</h3> </div>
+      <!--   <div class="panel-body">
+    
+  </div> -->
+
+      <!-- List group -->
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-success" ng-repeat="ques in minus.attempts track by $index">
+
+          <!--       {{$index+1}}  -->
+          {{ques.oper01}} {{ques.oper}} {{ques.oper02}} = {{ques.ans}}
+          <span class="badge">{{minus.attempts.length - $index}}</span>
+        </li>
+
+      </ul>
+    </div>  
+  
+  </div> <!-- ng-contoller="minusContoller" -->
